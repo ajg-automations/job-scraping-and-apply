@@ -21,6 +21,9 @@ Thumbs.db
 .vscode/
 .idea/
 
+# Next.js
+next-env.d.ts
+
 # trigger.dev / Vercel
 .trigger/
 .vercel/
