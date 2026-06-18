@@ -1,0 +1,17 @@
+{
+  "name": "job-assistant",
+  "private": true,
+  "version": "0.0.0",
+  "packageManager": "pnpm@11.7.0",
+  "engines": { "node": ">=22" },
+  "scripts": {
+    "build": "pnpm -r build",
+    "test": "pnpm -r test",
+    "typecheck": "pnpm -r typecheck",
+    "tool": "pnpm --filter @job/tools tool"
+  },
+  "devDependencies": {
+    "typescript": "^5.6.0",
+    "@types/node": "^22.0.0"
+  }
+}
