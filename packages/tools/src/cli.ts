@@ -1,6 +1,6 @@
 import type { FetchResult, SearchInput } from "@job/shared";
-import { fetchJobs } from "./fetch-jobs/index.ts";
-import { normalizePostings } from "./normalize-postings/index.ts";
+import { fetchJobs } from "./fetch-jobs/index";
+import { normalizePostings } from "./normalize-postings/index";
 
 async function main() {
   const [, , command, json] = process.argv;
