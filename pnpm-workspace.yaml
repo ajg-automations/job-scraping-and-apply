@@ -3,4 +3,7 @@ packages:
   - "trigger"
   - "apps/*"
 allowBuilds:
+  '@depot/cli': set this to true or false
   esbuild: true
+  protobufjs: set this to true or false
+  sharp: true
