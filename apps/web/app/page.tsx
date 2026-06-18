@@ -11,17 +11,22 @@ export default function Home() {
   async function onSearch(e: React.FormEvent) {
     e.preventDefault();
     setLoading(true);
-    const res = await fetch("/api/search", {
-      method: "POST",
-      headers: { "content-type": "application/json" },
-      body: JSON.stringify({
-        query,
-        sources: ["greenhouse"],
-        greenhouseBoards: boards.split(",").map((b) => b.trim()).filter(Boolean),
-      }),
-    });
-    setResult(await res.json());
-    setLoading(false);
+    try {
+      const res = await fetch("/api/search", {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({
+          query,
+          sources: ["greenhouse"],
+          greenhouseBoards: boards.split(",").map((b) => b.trim()).filter(Boolean),
+        }),
+      });
+      setResult(await res.json());
+    } catch {
+      setResult(null);
+    } finally {
+      setLoading(false);
+    }
   }
 
   return (
